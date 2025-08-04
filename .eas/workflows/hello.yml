@@ -7,9 +7,11 @@ on:
 
 jobs:
   my_job:
+    env:
+      GITHUB_COMMIT_MESSAGE: ${{github.commit_message}}
     steps:
       - name: My first step
-        run: echo "Hello World"
+        run: echo "$COMMIT_MESSAGE"
       - name: My second step
         run: echo "${{github.commit_message}}"
   show_whats_next:
