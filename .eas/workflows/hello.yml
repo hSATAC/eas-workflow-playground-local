@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: My first step
         run: echo "Hello World"
+      - name: My second step
+        run: echo ${{github.commit_message}}
   show_whats_next:
     type: doc
     needs: [my_job]
