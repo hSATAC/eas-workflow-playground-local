@@ -1,0 +1,12 @@
+name: Hello
+
+jobs:
+  my_job:
+    steps:
+      - name: My first step
+        run: echo "Hello World"
+  show_whats_next:
+    type: doc
+    needs: [my_job]
+    params:
+      md: This is a job to *test* eas-workflow
