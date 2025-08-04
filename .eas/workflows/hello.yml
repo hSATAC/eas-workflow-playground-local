@@ -11,7 +11,7 @@ jobs:
       GITHUB_COMMIT_MESSAGE: ${{github.commit_message}}
     steps:
       - name: My first step
-        run: echo "$COMMIT_MESSAGE"
+        run: echo "$GITHUB_COMMIT_MESSAGE"
       - name: My second step
         run: echo "${{github.commit_message}}"
   show_whats_next:
