@@ -16,6 +16,12 @@ jobs:
     steps:
       - name: My first step
         run: echo "$GITHUB_COMMIT_MESSAGE"
+      - name: My second step
+        run: echo "${{github.commit_message}}"
+      - name: My third step
+        run: echo "${{github.event.head_commit.id}}"
+      - name: My second step
+        run: echo '${{toJSON(github)}}'
   show_whats_next:
     type: doc
     needs: [my_job]
