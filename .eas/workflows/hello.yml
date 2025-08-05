@@ -1,9 +1,13 @@
-name: Hello2
+name: Hello
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches: ['*']
+  schedule:
+    - cron: '*/5 * * * *'
 
 jobs:
   my_job:
@@ -12,8 +16,6 @@ jobs:
     steps:
       - name: My first step
         run: echo "$GITHUB_COMMIT_MESSAGE"
-      - name: My second step
-        run: echo "${{github.commit_message}}"
   show_whats_next:
     type: doc
     needs: [my_job]
