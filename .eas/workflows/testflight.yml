@@ -17,3 +17,5 @@ jobs:
       EXPO_DEBUG: 1
     params:
       build_id: ${{ needs.build_ios.outputs.build_id }}
+      internal_groups:
+        - internal_with_auto_dist
