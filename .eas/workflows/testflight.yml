@@ -19,4 +19,4 @@ jobs:
       build_id: ${{ needs.build_ios.outputs.build_id }}
       external_groups:
         - external
-      changelog: "This is a changelog"
+      #changelog: "This is a changelog"
