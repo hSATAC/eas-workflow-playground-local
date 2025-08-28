@@ -43,6 +43,7 @@ jobs:
   #       - ${{ after.publish-update.outputs.first_update_group_id }}
   post-comment:
     name: Post GitHub comment
+    needs: [build-ios]
     type: github-comment
     params:
       message: |
