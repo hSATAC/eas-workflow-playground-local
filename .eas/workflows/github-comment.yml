@@ -1,0 +1,51 @@
+# Example EAS Workflow with GitHub Comment Job
+
+name: Build and Comment on PR
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  # build-ios:
+  #   name: Build iOS app
+  #   type: build
+  #   params:
+  #     platform: ios
+  #     profile: preview
+
+  # build-android:
+  #   name: Build Android app
+  #   type: build
+  #   params:
+  #     platform: android
+  #     profile: preview
+
+  # publish-update:
+  #   name: Publish update
+  #   type: update
+  #   params:
+  #     branch: preview
+  #     message: "Update for PR #${{ github.event.pull_request.number }}"
+
+  # post-comment:
+  #   name: Post GitHub comment
+  #   type: github-comment
+  #   needs: [build-ios, build-android, publish-update]
+  #   params:
+  #     message: |
+  #       🎉 Builds and updates are ready for testing!
+
+  #       Please download the appropriate build for your device and scan the QR code to test the latest changes.
+  #     builds:
+  #       - ${{ after.build-ios.outputs.build_id }}
+  #       - ${{ after.build-android.outputs.build_id }}
+  #     updates:
+  #       - ${{ after.publish-update.outputs.first_update_group_id }}
+  post-comment:
+    name: Post GitHub comment
+    type: github-comment
+    params:
+      message: |
+        🎉 Builds and updates are ready for testing!
+
+        Please download the appropriate build for your device and scan the QR code to test the latest changes.
