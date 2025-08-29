@@ -53,6 +53,8 @@ jobs:
       builds:
         # - ${{ after.build_ios.outputs.build_id }}
         - "0ec576a7-da6f-41d2-9901-3ab79cf56194"
+        - "9856bddc-6848-4e69-9284-258b03cbe866"
       updates:
         # - ${{ after.publish_update.outputs.first_update_group_id }}
         - "812c66ca-5790-4105-9680-8620cc5daf4a"
+        - "8f1456cb-3c15-4aa9-be23-bc317ef54243"
