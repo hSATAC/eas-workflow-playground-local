@@ -6,12 +6,12 @@ on:
     types: [opened, reopened, synchronize]
 
 jobs:
-  build_ios:
-    name: Build iOS app
-    type: build
-    params:
-      platform: ios
-      profile: development
+  # build_ios:
+  #   name: Build iOS app
+  #   type: build
+  #   params:
+  #     platform: ios
+  #     profile: development
 
   # build-android:
   #   name: Build Android app
@@ -20,12 +20,12 @@ jobs:
   #     platform: android
   #     profile: preview
 
-  publish_update:
-    name: Publish update
-    type: update
-    params:
-      branch: development
-      message: "Update for PR #${{ github.event.pull_request.number }}"
+  # publish_update:
+  #   name: Publish update
+  #   type: update
+  #   params:
+  #     branch: development
+  #     message: "Update for PR #${{ github.event.pull_request.number }}"
 
   # post-comment:
   #   name: Post GitHub comment
@@ -46,27 +46,24 @@ jobs:
     # needs: [build_ios, publish_update]
     type: github-comment
     params:
-      message: |
-        🎉🎉🎉  Builds and updates are ready for testing!
-
-        Please download the appropriate build for your device and scan the QR code to test the latest changes.
       build_ids:
         # - ${{ after.build_ios.outputs.build_id }}
         - "0ec576a7-da6f-41d2-9901-3ab79cf56194"
         - "9856bddc-6848-4e69-9284-258b03cbe866"
+        - "86557457-1cb8-4cef-9339-b8f73f29cb77"
       update_group_ids:
         # - ${{ after.publish_update.outputs.first_update_group_id }}
         - "812c66ca-5790-4105-9680-8620cc5daf4a"
         - "8f1456cb-3c15-4aa9-be23-bc317ef54243"
-  post-comment-payload:
-    name: Post GitHub comment payload
-    # needs: [build_ios, publish_update]
-    type: github-comment
-    params:
-      payload: ${{ toJSON(github) }}
-  post-comment-auto:
-    name: Post GitHub comment payload
-    needs: [build_ios, publish_update]
-    type: github-comment
-    params:
-      message: This is a auto report
+  # post-comment-payload:
+  #   name: Post GitHub comment payload
+  #   # needs: [build_ios, publish_update]
+  #   type: github-comment
+  #   params:
+  #     payload: ${{ toJSON(github) }}
+  # post-comment-auto:
+  #   name: Post GitHub comment payload
+  #   after: [build_ios, publish_update]
+  #   type: github-comment
+  #   params:
+  #     message: This is a auto report
