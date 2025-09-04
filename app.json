@@ -48,6 +48,12 @@
         "projectId": "fd363c72-4299-4a72-9f70-19d62a810af1"
       }
     },
-    "owner": "testuser"
+    "owner": "testuser",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "http://127.0.0.1:3000/expo-updates/fd363c72-4299-4a72-9f70-19d62a810af1"
+    }
   }
 }

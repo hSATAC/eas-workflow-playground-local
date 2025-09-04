@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(yarn install)",
+      "Bash(yarn explain:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
