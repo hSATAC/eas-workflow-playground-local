@@ -6,12 +6,12 @@ on:
     types: [opened, reopened, synchronize]
 
 jobs:
-  # build_ios:
-  #   name: Build iOS app
-  #   type: build
-  #   params:
-  #     platform: ios
-  #     profile: development
+  build_ios:
+    name: Build iOS app
+    type: build
+    params:
+      platform: ios
+      profile: development
 
   # build-android:
   #   name: Build Android app
@@ -20,12 +20,12 @@ jobs:
   #     platform: android
   #     profile: preview
 
-  # publish_update:
-  #   name: Publish update
-  #   type: update
-  #   params:
-  #     branch: development
-  #     message: "Update for PR #${{ github.event.pull_request.number }}"
+  publish_update:
+    name: Publish update
+    type: update
+    params:
+      branch: development
+      message: "Update for PR #${{ github.event.pull_request.number }}"
 
   # post-comment:
   #   name: Post GitHub comment
@@ -64,3 +64,9 @@ jobs:
     type: github-comment
     params:
       payload: ${{ toJSON(github) }}
+  post-comment-auto:
+    name: Post GitHub comment payload
+    needs: [build_ios, publish_update]
+    type: github-comment
+    params:
+      message: This is a auto report
