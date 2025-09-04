@@ -63,4 +63,4 @@ jobs:
     # needs: [build_ios, publish_update]
     type: github-comment
     params:
-      payload: ${{ fromJSON(github) }}
+      payload: ${{ toJSON(github) }}
