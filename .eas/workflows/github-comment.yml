@@ -67,4 +67,4 @@ jobs:
     type: github-comment
     params:
       message: This is a auto report
-      payload: test
+      # payload: test
