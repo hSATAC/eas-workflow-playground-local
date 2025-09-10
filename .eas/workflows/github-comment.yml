@@ -55,15 +55,16 @@ jobs:
         # - ${{ after.publish_update.outputs.first_update_group_id }}
         - "812c66ca-5790-4105-9680-8620cc5daf4a"
         - "8f1456cb-3c15-4aa9-be23-bc317ef54243"
-  # post-comment-payload:
-  #   name: Post GitHub comment payload
-  #   # needs: [build_ios, publish_update]
-  #   type: github-comment
-  #   params:
-  #     payload: ${{ toJSON(github) }}
-  # post-comment-auto:
-  #   name: Post GitHub comment payload
-  #   after: [build_ios, publish_update]
-  #   type: github-comment
-  #   params:
-  #     message: This is a auto report
+  post-comment-payload:
+    name: Post GitHub comment payload
+    # needs: [build_ios, publish_update]
+    type: github-comment
+    params:
+      payload: ${{ toJSON(github) }}
+  post-comment-auto:
+    name: Post GitHub comment payload
+    # after: [build_ios, publish_update]
+    type: github-comment
+    params:
+      message: This is a auto report
+      payload: test
