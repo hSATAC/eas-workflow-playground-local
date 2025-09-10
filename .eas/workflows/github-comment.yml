@@ -6,12 +6,12 @@ on:
     types: [opened, reopened, synchronize]
 
 jobs:
-  build_ios:
-    name: Build iOS app
-    type: build
-    params:
-      platform: ios
-      profile: development
+  # build_ios:
+  #   name: Build iOS app
+  #   type: build
+  #   params:
+  #     platform: ios
+  #     profile: development
 
   # build-android:
   #   name: Build Android app
@@ -61,10 +61,11 @@ jobs:
     type: github-comment
     params:
       payload: ${{ toJSON(github) }}
+
   post-comment-auto:
     name: Post GitHub comment payload
-    after: [build_ios, publish_update]
+    after: [publish_update]
     type: github-comment
-    params:
-      # message: This is a auto report
-      # payload: test
+    # params:
+    # message: This is a auto report
+    # payload: test
