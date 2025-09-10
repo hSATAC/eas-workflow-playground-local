@@ -51,6 +51,7 @@ jobs:
         - "0ec576a7-da6f-41d2-9901-3ab79cf56194"
         - "9856bddc-6848-4e69-9284-258b03cbe866"
         - "86557457-1cb8-4cef-9339-b8f73f29cb77"
+        - "c2fdf57b-69fb-41d6-965c-459366fd023e"
       update_group_ids:
         # - ${{ after.publish_update.outputs.first_update_group_id }}
         - "812c66ca-5790-4105-9680-8620cc5daf4a"
@@ -66,6 +67,7 @@ jobs:
     name: Post GitHub comment payload
     after: [publish_update]
     type: github-comment
-    # params:
+    params:
+      update_group_ids: []
     # message: This is a auto report
     # payload: test
