@@ -68,6 +68,6 @@ jobs:
     after: [publish_update]
     type: github-comment
     params:
-      update_group_ids: []
-    # message: This is a auto report
+      # update_group_ids: []
+      message: This is a auto report
     # payload: test
