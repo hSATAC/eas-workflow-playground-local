@@ -65,7 +65,7 @@ jobs:
 
   post-comment-auto:
     name: Post GitHub comment payload
-    after: [publish_update]
+    after: [build_ios, publish_update]
     type: github-comment
     params:
       # update_group_ids: []
