@@ -6,12 +6,12 @@ on:
     types: [opened, reopened, synchronize]
 
 jobs:
-  # build_ios:
-  #   name: Build iOS app
-  #   type: build
-  #   params:
-  #     platform: ios
-  #     profile: development
+  build_ios:
+    name: Build iOS app
+    type: build
+    params:
+      platform: ios
+      profile: development
 
   # build-android:
   #   name: Build Android app
