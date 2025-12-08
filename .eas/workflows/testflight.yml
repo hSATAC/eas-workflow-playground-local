@@ -1,6 +1,6 @@
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
 
 jobs:
   build_ios:
@@ -14,7 +14,7 @@ jobs:
     needs: [build_ios]
     type: testflight
     env:
-      EXPO_DEBUG: 1
+      EXPO_DEBUG: "1"
     params:
       build_id: ${{ needs.build_ios.outputs.build_id }}
       changelog: |
