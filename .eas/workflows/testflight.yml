@@ -16,7 +16,7 @@ jobs:
     env:
       EXPO_DEBUG: "1"
     params:
-      wait_processing_timeout_seconds: 1
+      # wait_processing_timeout_seconds: 1
       build_id: ${{ needs.build_ios.outputs.build_id }}
       changelog: |
         What's new in "Version 2.0":
