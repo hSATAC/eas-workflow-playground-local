@@ -3,7 +3,7 @@ name: Github Comment
 on:
   pull_request: {}
 
-  # jobs:
+jobs:
   #   build_ios:
   #     name: Build iOS app
   #     type: build
