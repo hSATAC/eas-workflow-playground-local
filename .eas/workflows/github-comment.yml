@@ -22,6 +22,6 @@ jobs:
     # after: [build_ios, deploy_web]
     params:
       build_ids:
-        - 019be482-4df9-791b-92c8-4a6c28453733
+        - 04051650-90aa-4ed9-96ae-0153084ab44d
       deployment_ids:
         - 99x8l1ewjk
