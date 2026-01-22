@@ -4,10 +4,20 @@ on:
   pull_request: {}
 
 jobs:
+  build_ios:
+    name: Build iOS app
+    type: build
+    params:
+      platform: ios
+      profile: production
+  deploy_web:
+    type: deploy
+    params:
+      alias: pr
   comment:
     type: github-comment
-    params:
-      build_ids:
-        - f1a20c8f-6d7a-420e-83e0-ee33ca3f7ddd
-      deployment_ids:
-        - a3j2xfbbid
+    # params:
+    # build_ids:
+    #   - f1a20c8f-6d7a-420e-83e0-ee33ca3f7ddd
+    # deployment_ids:
+    #   - a3j2xfbbid
