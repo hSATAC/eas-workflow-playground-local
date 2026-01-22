@@ -19,6 +19,7 @@ jobs:
     #   alias: pr
   comment:
     type: github-comment
+    after: [build_ios, deploy_web]
     # params:
     # build_ids:
     #   - f1a20c8f-6d7a-420e-83e0-ee33ca3f7ddd
