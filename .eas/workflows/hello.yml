@@ -10,20 +10,29 @@ name: Hello
 #     - cron: '*/5 * * * *'
 
 jobs:
-  my_job:
-    env:
-      GITHUB_COMMIT_MESSAGE: ${{github.commit_message}}
-    steps:
-      - name: My first step
-        run: echo "$GITHUB_COMMIT_MESSAGE"
-      - name: My second step
-        run: echo "${{github.commit_message}}"
-      - name: My third step
-        run: echo "${{github.event.head_commit.id}}"
-      - name: My second step
-        run: echo '${{toJSON(github)}}'
-  show_whats_next:
-    type: doc
-    needs: [my_job]
+  # my_job:
+  # env:
+  #   GITHUB_COMMIT_MESSAGE: ${{github.commit_message}}
+  # steps:
+  #   # - name: My first step
+  #   #   run: echo "$GITHUB_COMMIT_MESSAGE"
+  #   # - name: My second step
+  #   #   run: echo "${{github.commit_message}}"
+  #   # - name: My third step
+  #   #   run: echo "${{github.event.head_commit.id}}"
+  #   - run: env
+  #   - uses: eas/checkout
+  #   - uses: eas/use_npm_token
+  #   - uses: eas/install_node_modules
+  #   - name: My second step
+  #     run: echo '${{toJSON(github)}}'
+  #     __metricsId: show_whats_next
+  publish_update:
+    type: update
     params:
-      md: This is a job to *test* eas-workflow
+      channel: development
+  # show_whats_next:
+  #   type: doc
+  #   needs: [my_job]
+  #   params:
+  #     md: This is a job to *test* eas-workflow

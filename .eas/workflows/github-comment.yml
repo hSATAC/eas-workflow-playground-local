@@ -1,0 +1,13 @@
+name: Github Comment
+
+on:
+  pull_request: {}
+
+jobs:
+  comment:
+    type: github-comment
+    params:
+      build_ids:
+        - f1a20c8f-6d7a-420e-83e0-ee33ca3f7ddd
+      deployment_ids:
+        - a3j2xfbbid
