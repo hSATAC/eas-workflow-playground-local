@@ -1,0 +1,27 @@
+name: Github Comment
+
+on:
+  pull_request: {}
+
+jobs:
+  #   build_ios:
+  #     name: Build iOS app
+  #     type: build
+  #     params:
+  #       platform: ios
+  #       profile: production
+  #   deploy_web:
+  #     type: deploy
+  #     env:
+  #       EXPO_DEBUG: "1"
+  #       EXPO_LOCAL: "1"
+  # params:
+  #   alias: pr
+  comment:
+    type: github-comment
+    # after: [build_ios, deploy_web]
+    params:
+      build_ids:
+        - 04051650-90aa-4ed9-96ae-0153084ab44d
+      deployment_ids:
+        - 99x8l1ewjk
